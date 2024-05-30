@@ -1,78 +1,48 @@
 import React from "react";
+import "./Weather.css";
 
 export default function Weather() {
-  let weatherData = {
-    city: "London",
-    date: "Tuesday 07:15",
-    description: "Cloudy",
-    temperature: 5,
-    humidity: 80,
-    wind: 30,
-  };
   return (
-    <div className="Weather weather-app">
-      <header>
-        <form className="search-form">
-          <input
-            type="search"
-            placeholder="Enter a city.."
-            required
-            className="search-form-input"
-            autocomplete="on"
-          />
-          <input type="submit" value="Search" className="search-form-button" />
-        </form>
-      </header>
-      <main>
-        <div className="weather-app-data">
-          <div>
-            <h1 className="weather-app-city">{weatherData.city}</h1>
-            <p className="weather-app-details">
-              <span>Last updated: {weatherData.date}</span>,{" "}
-              {weatherData.description} <span></span>
-              <br />
-              Humidity: <strong>{weatherData.humidity} %</strong>, Wind:
-              <strong> {weatherData.wind} km/h</strong>
-            </p>
+    <div className="Weather">
+      <form>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city.."
+              className="search-form-input"
+            />
           </div>
-          <div className="weather-app-temperature-container">
-            <div>☁️</div>
-            <div className="weather-app-temperature">
-              {weatherData.temperature}
-            </div>
-            <div className="weather-app-unit">°C</div>
+          <div className="col-3">
+            <input
+              type="submit"
+              value="Search"
+              className="btn search-form-button "
+            />
           </div>
         </div>
-        <div className="weather-forecast"></div>
-      </main>
-      <footer>
-        <p>
-          This project was coded by {""}
-          <a
-            href="https://www.shecodes.io/graduates/104913-patrycja-oosthuizen"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Patrycja Oosthuizen
-          </a>
-          , is {""}
-          <a
-            href="https://github.com/PatrycjaOosthuizen/weather-react"
-            target="_blank"
-            rel="noreferrer"
-          >
-            open-sourced on Github {""}
-          </a>
-          and hosted on
-          <a
-            href="https://react-weather-app-po.netlify.app"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {""} Netlify
-          </a>
-        </p>
-      </footer>
+      </form>
+      <h1>New York</h1>
+      <ul>
+        <li>Wednesday 07:00</li>
+        <li>Mostly Cloudy</li>
+      </ul>
+      <div className="row">
+        <div className="col-6">
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            alt="Mostly Cloudy"
+          />
+          6°C
+        </div>
+        <div className="col-6">
+          <ul>
+            <li>Precipitation: 15%</li>
+            <li>Humidity: 72%</li>
+            <li>Wind: 13km/h</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
