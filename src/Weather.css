@@ -55,6 +55,8 @@ footer {
   font-weight: 400;
   position: relative;
   line-height: 1;
+  bottom: -7px;
+  margin-left: 2px;
 }
 .Weather .search-form-input {
   background-color: white;
