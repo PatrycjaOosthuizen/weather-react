@@ -46,7 +46,9 @@ footer {
   margin-left: 10px;
 }
 .Weather canvas {
-  margin: 10px auto;
+  margin-right: 4px;
+  margin-top: 5px;
+  display: inline-block;
 }
 
 .Weather .unit {
