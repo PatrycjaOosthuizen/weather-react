@@ -1,7 +1,14 @@
 .WeatherForecast {
   text-align: center;
+  border-top: 1px solid rgba(157, 165, 174, 0.5);
+  font-size: 15px;
 }
 .WetherForecast-temperature-min {
   opacity: 0.6;
   margin-left: 5px;
+}
+@media (max-width: 576px) {
+  .WeatherForecast {
+    border: none;
+  }
 }

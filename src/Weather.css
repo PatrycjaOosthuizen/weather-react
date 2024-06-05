@@ -1,24 +1,18 @@
 a {
-  color: #885df1;
-}
-
-footer {
-  border-top: 1px solid #e4f4f1;
-  padding: 30px 0 0 0;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
+  color: #8fcdaf;
 }
 .Weather {
-  font-family: arial, sans-serif;
-  border: 1px solid #dadde1;
-  padding: 16px;
-  border-radius: 4px;
+  background-color: #1c3c6b;
+  font-family: "Roboto", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .Weather h1 {
-  font-size: 24px;
-  font-weight: 100;
+  color: #f9f7fe;
+  font-size: 35px;
+  font-weight: 500;
   margin: 20px 0 0 0;
   line-height: 29px;
 }
@@ -26,11 +20,11 @@ footer {
 .Weather ul {
   margin: 0;
   padding: 0;
-  color: rgb(135, 135, 135);
+  color: rgb(187, 182, 182);
 }
 
 .Weather li {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 100;
   line-height: 19px;
   list-style: none;
@@ -38,7 +32,7 @@ footer {
 
 .Weather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: #f9f7fe;
   font-size: 64px;
   line-height: 64px;
   margin-left: 5px;
@@ -46,13 +40,12 @@ footer {
   margin-left: 10px;
 }
 .Weather canvas {
-  margin-right: 4px;
-  margin-top: 5px;
-  display: inline-block;
+  max-height: 50px;
+  padding-bottom: 5px;
 }
 
 .Weather .unit {
-  color: rgb(33, 33, 33);
+  color: #f9f7fe;
   font-size: 16px;
   font-weight: 400;
   position: relative;
@@ -61,25 +54,36 @@ footer {
   margin-left: 2px;
 }
 .Weather .search-form-input {
-  background-color: white;
+  background-color: #f9f7fe;
   border: none;
   border-radius: 6px;
-  width: 80%;
+  width: 103%;
   padding: 15px 20px;
   font-size: 16px;
 }
 
 .Weather .search-form-button {
-  background-color: #885df1;
+  background-color: #8fcdaf;
   padding: 15px 30px;
   border: none;
   border-radius: 6px;
   color: white;
-  margin-left: 5px;
   font-size: 16px;
 }
 
 .Weather .search-form-button:hover {
   background-color: #8fcdaf;
   cursor: pointer;
+  opacity: 0.8;
+}
+
+@media (max-width: 380px) {
+  .Weather ul {
+    font-size: 12px;
+  }
+  .Weather canvas {
+    max-height: 30px;
+    align-self: center;
+    padding: 0;
+  }
 }
