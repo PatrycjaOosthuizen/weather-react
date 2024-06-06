@@ -1,5 +1,6 @@
 .WeatherForecast {
   text-align: center;
+  margin-top: 10px;
   border-top: 1px solid rgba(157, 165, 174, 0.5);
   font-size: 15px;
 }
@@ -9,6 +10,8 @@
 }
 @media (max-width: 576px) {
   .WeatherForecast {
-    border: none;
+    text-align: center;
+    border-top: 1px solid rgba(157, 165, 174, 0.5);
+    font-size: 13px;
   }
 }

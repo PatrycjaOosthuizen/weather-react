@@ -35,7 +35,7 @@ a {
   color: #f9f7fe;
   font-size: 64px;
   line-height: 64px;
-  margin-left: 5px;
+
   font-weight: 400;
   margin-left: 10px;
 }
@@ -69,25 +69,10 @@ a {
   border-radius: 6px;
   color: white;
   font-size: 16px;
-  text-align: center;
 }
 
 .Weather .search-form-button:hover {
   background-color: #8fcdaf;
   cursor: pointer;
   opacity: 0.8;
-}
-
-@media (max-width: 380px) {
-  .Weather ul {
-    font-size: 12px;
-  }
-  .Weather canvas {
-    max-height: 30px;
-    align-self: center;
-    padding: 0;
-  }
-  .Weather .search-form-input {
-    width: 90%;
-  }
 }

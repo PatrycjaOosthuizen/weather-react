@@ -1,0 +1,9 @@
+@media (max-width: 576px) {
+  .WeatherInfo .humidity {
+    font-size: 14px;
+  }
+
+  .WeatherInfo .wind {
+    font-size: 14px;
+  }
+}
