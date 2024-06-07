@@ -13,7 +13,7 @@ export default function App() {
             <a
               href="https://www.shecodes.io/graduates/104913-patrycja-oosthuizen"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Patrycja Oosthuizen
             </a>
@@ -21,7 +21,7 @@ export default function App() {
             <a
               href="https://github.com/PatrycjaOosthuizen/weather-react"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               open-sourced on Github {""}
             </a>
@@ -29,7 +29,7 @@ export default function App() {
             <a
               href="https://react-weather-app-po.netlify.app"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               {""} Netlify
             </a>
