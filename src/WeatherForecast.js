@@ -8,20 +8,54 @@ export default function WeatherForecast(props) {
   let [forecast, setForecast] = useState(null);
 
   useEffect(() => {
+    function SearchWeatherForecast() {
+      let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
+      let longitude = props.coordinates.lon;
+      let latitude = props.coordinates.lat;
+      // Updated to use the free 5-day forecast API
+      let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+      axios.get(apiUrl).then(handleResponse);
+    }
+
     setLoaded(false);
+    SearchWeatherForecast();
   }, [props.coordinates]);
 
   function handleResponse(response) {
-    setForecast(response.data.daily);
-    setLoaded(true);
-  }
-  function SearchWeatherForecast() {
-    let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    // Process the 3-hour interval data into daily forecasts
+    const dailyData = {};
 
-    axios.get(apiUrl).then(handleResponse);
+    response.data.list.forEach((item) => {
+      const date = new Date(item.dt * 1000).toLocaleDateString();
+
+      if (!dailyData[date]) {
+        dailyData[date] = {
+          dt: item.dt,
+          temp: {
+            min: item.main.temp_min,
+            max: item.main.temp_max,
+            day: item.main.temp,
+          },
+          weather: item.weather,
+          humidity: item.main.humidity,
+          wind_speed: item.wind.speed,
+        };
+      } else {
+        // Update min/max temperatures for the day
+        dailyData[date].temp.min = Math.min(
+          dailyData[date].temp.min,
+          item.main.temp_min
+        );
+        dailyData[date].temp.max = Math.max(
+          dailyData[date].temp.max,
+          item.main.temp_max
+        );
+      }
+    });
+
+    setForecast(Object.values(dailyData));
+    setLoaded(true);
   }
 
   if (loaded) {
@@ -47,7 +81,6 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    SearchWeatherForecast();
-    return null;
+    return <div className="WeatherForecast">Loading forecast...</div>;
   }
 }
