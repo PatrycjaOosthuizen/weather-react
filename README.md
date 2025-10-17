@@ -1,3 +1,6 @@
+
+![react weather app](https://github.com/PatrycjaOosthuizen/weather-react/assets/152764771/9e2b6a08-19e2-45e1-b6ed-8f0b4d2dde76)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
